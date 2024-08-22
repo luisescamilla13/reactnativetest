@@ -31,6 +31,10 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const executeDangerousCode = () => {
+    const userInput = "console.log('This is dangerous');";
+    eval(userInput); // Using eval can lead to security vulnerabilities
+  };
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -41,6 +45,9 @@ function Section({children, title}: SectionProps): JSX.Element {
           },
         ]}>
         {title}
+      </Text>
+      <Text onPress={executeDangerousCode}>
+        Press me to execute dangerous code
       </Text>
       <Text
         style={[
