@@ -33,7 +33,8 @@ function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const executeDangerousCode = () => {
     const userInput = "console.log('This is dangerous');";
-    eval(userInput); // Using eval can lead to security vulnerabilities
+    //eval(userInput); // Using eval can lead to security vulnerabilities
+    console.log('This is dangerous');
   };
   return (
     <View style={styles.sectionContainer}>
