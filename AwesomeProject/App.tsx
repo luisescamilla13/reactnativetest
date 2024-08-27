@@ -34,7 +34,7 @@ function Section({children, title}: SectionProps): JSX.Element {
   const executeDangerousCode = () => {
     const userInput = "console.log('This is dangerous');";
     //eval(userInput); // Using eval can lead to security vulnerabilities
-    console.log('This is dangerous');
+    console.log('This is dangerous!');
   };
   return (
     <View style={styles.sectionContainer}>
